@@ -1,0 +1,112 @@
+/* Align Folders */
+
+div.folders {
+    display: flex;
+    flex-direction: row;    
+}
+
+
+/* Folder Front */
+
+div.folder {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    margin: 60px;
+    
+    max-height: 84px;
+    max-width: 90px;
+    
+    cursor: pointer;
+}
+
+div.folder-front {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    width: 90px;
+    height: 60px;
+    border: none;
+    border-radius: 10px;
+    background: linear-gradient(180deg, #D9D9D9 0%, #BEBEBE 100%);
+    backdrop-filter: blur(4px);
+    
+    z-index: 10;
+}
+
+/* Folder back */
+ div.folder-back {
+    height: 0;
+}
+ div.folder-back div:nth-child(1) {
+    position: relative;
+    top: -70px;
+    left: -20px;
+
+    width: 50px;
+    height: 60px;
+
+    background: #6A6A6A;
+    backdrop-filter: blur(4px);
+
+    border: none;
+    border-radius: 10px;
+    z-index: -1;
+}
+
+ div.folder-back div:nth-child(2) {
+    position: relative;
+    top: -125px;
+    left: 20px;
+
+    width: 50px;
+    height: 60px;
+
+    background: #6A6A6A;
+    backdrop-filter: blur(4px);
+
+    border: none;
+    border-radius: 0 10px 10px 0;
+
+    z-index: -1;
+}
+
+/* Folder Title */
+ div.folder h3, a {
+    text-decoration: none;
+    font-size: 16px;
+    color: #ABABAB;
+    white-space: nowrap;
+}
+
+/*
+    Just for projects:
+*/
+
+img.project-image {
+    max-width: 80px;
+    height: 56px;
+    border-radius: 10px;
+
+    position: absolute;
+
+    transform: rotate(15deg) translate(-5px, -20px);
+    
+    z-index: 9;
+}
+
+div.folder:hover {
+    filter: brightness(1.10);
+    cursor: pointer;
+}
+
+.router {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+} 

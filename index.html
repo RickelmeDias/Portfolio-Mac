@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta property="og:image" content="https://media-exp1.licdn.com/dms/image/C5603AQE8qpTVvNdZoQ/profile-displayphoto-shrink_200_200/0/1639441569681?e=1645660800&v=beta&t=FaSsxc9ttFYVkMczWQrc-KxAWbNGZXCi58pdQhYCTmQ" />
+    
+    <title>Rickelme Dias</title>
+
+    <link rel="icon" href="./assets/app/social_media/medog.svg">
+    <link rel="stylesheet" href="/styles/body-settings.css">
+    <link rel="stylesheet" href="/styles/app.css">
+    <link rel="stylesheet" href="/styles/nav-bar.css">
+
+    <link rel="stylesheet" href="/styles/folder-style.css">
+    <link rel="stylesheet" href="/styles/file-style.css">
+    <link rel="stylesheet" href="/styles/modal-text.css">
+    
+    
+</head>
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.2/dist/vue.js"></script>
+    <script src="https://unpkg.com/vue-router@3.0.1/dist/vue-router.js"></script>
+    
+    <div id="app">
+        <main>
+            <text-modal class="modal-details not-view" ftitle="Experiências Profissionais" fdescription="Minhas experiencias."></text-modal>
+            <div id="overlay" class="not-view" onclick="changeModalState()"></div>
+
+            <header>
+                <div id="header-top">
+                    <span>
+                        <div id="back"  onclick="window.history.back();"><img src="./assets/app/icons/arrow.svg" alt=""></div>
+                        <div id="ahead" onclick="window.history.forward();"><img src="./assets/app/icons/arrow.svg" alt=""></div>
+                    </span>
+                    <div class="circles">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </div>
+                </div>
+                <hr>
+                <h1>Rickelme Dias</h1>
+            </header>
+
+            <div id="content">
+                <aside id="social-media-bar">
+                    <div id="home">
+                        <router-link to="/" @click="console.log('test')">
+                        <img src="/assets/app/icons/home.svg" alt="" id="home">
+                        </router-link>
+                        <hr>
+                    </div>
+                    <div id="my-infos">
+                        <h3>Social Media</h3>
+                        <div>
+                            <img src="/assets/app/social_media/me.svg" alt="" id="profile-picture">
+                            <div>
+                                <img src="/assets/app/icons/heart.svg" alt="" onclick="clickedHeart(this);">
+                                <img src="/assets/app/icons/dog.svg" alt="" onclick="clickedDog(this);">
+                            </div>
+                        </div>
+                        <hr>
+                    </div>
+                    <div id="my-social">
+                        <a href="https://www.linkedin.com/in/rickelmedias/" target="_blank">
+                        <div class="social">
+                            <img src="/assets/app/icons/linkedin.svg" alt="">
+                            <span>LinkedIn</span>
+                            <img src="/assets/app/icons/go-social.svg" alt="">
+                        </div></a>
+                        <a href="https://www.github.com/rickelmedias/" target="_blank">
+                        <div class="social">
+                            <img src="/assets/app/icons/github.svg" alt="">
+                            <span>Github</span>
+                            <img src="/assets/app/icons/go-social.svg" alt="">
+                        </div></a>
+                        <a href="mailto:rickelmegadias@gmail.com/" target="_blank">
+                        <div class="social">
+                            <img src="/assets/app/icons/email.svg" alt="">
+                            <span>E-mail</span>
+                            <img src="/assets/app/icons/go-social.svg" alt="">
+                        </div></a>
+                        <a href="https://www.facebook.com/profile.php?id=100058912784894" target="_blank">
+                        <div class="social">
+                            <img src="/assets/app/icons/facebook.svg" alt="">
+                            <span>Facebook</span>
+                            <img src="/assets/app/icons/go-social.svg" alt="">
+                        </div></a>
+                        <a href="https://www.behance.net/rickelmedias" target="_blank">
+                        <div class="social">
+                            <img src="/assets/app/icons/behance.svg" alt="" width="18">
+                            <span>Behance</span>
+                            <img src="/assets/app/icons/go-social.svg" alt="">
+                        </div></a>
+                    </div>
+                </aside>
+                <router-view></router-view>
+            </div>
+        </main>
+    </div>
+    
+    
+    <!-- Scripts for vue components -->
+    
+    <script type="text/x-template" id="folder-template">
+        <div class="folder">
+            <router-link :to="{ path: '/' + flink }" class="router">
+                <div class="folder-front">
+                    <img :src="ficon" alt=""> 
+                </div>
+                <div class="folder-back">
+                    <div class="f-back-1"></div>    
+                    <div class="f-back-2"></div>    
+                </div>
+                <h3>{{ fname }}</h3>
+            </router-link>
+        </div>
+    </script>
+    
+    <script type="text/x-template" id="projects-template">
+        <div class="folder" >
+                <div class="folder-front">
+                    <img :src="ficon" alt=""> 
+                </div>
+                <img :src="fsrc" class="project-image" alt=""> 
+                <div class="folder-back">
+                    <div class="f-back-1"></div>    
+                    <div class="f-back-2"></div>    
+                </div>
+                <h3>{{ fname }}</h3>
+        </div>
+    </script>
+    
+    <script type="text/x-template" id="file-template">
+        <div class="file">
+            <div class="file-back">
+                <div class="file-fold">
+                </div>
+                <div class="file-text" :style="{ background: fcolor }">
+                    <!-- <p></p> -->
+                    <p>{{ ftext }}</p>
+                </div>
+            </div>
+            <h3>{{ fname }}</h3>
+        </div>
+    </script>
+    
+    <script src="./src/app.js"></script>
+    <script src="./src/interactive-profile.js"></script>
+</body>
+</html>

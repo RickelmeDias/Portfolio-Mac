@@ -1,0 +1,111 @@
+aside#social-media-bar {
+    display: grid;
+    grid-template-rows: 70px 115px 4fr;
+    grid-auto-columns: 100%;
+
+    justify-content: center;
+    align-items: flex-start;
+}
+
+aside#social-media-bar h3 {
+    font-weight: 300;
+    color: #ABABAB;
+}
+
+img#home {
+    margin-top: 0.75rem;
+}
+
+div#home img:hover {
+    filter: brightness(1.5);
+    cursor: pointer;
+}
+
+div#my-infos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+div#my-infos div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+div#my-infos div img:hover {
+    filter: brightness(1.5);
+    cursor: pointer;
+}
+
+div#my-infos div div {
+    margin: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+div#my-infos div div img {
+    margin-bottom: 0.25rem;
+    margin-top: 0.25rem;
+}
+div#my-infos div div img:hover {
+    filter: brightness(1.5);
+    cursor: pointer;
+}
+
+div#home {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+}
+
+hr {
+    opacity: 20%;
+    border-radius: 5rem;
+    border: #ABABAB solid 0.05rem;
+    width: 100%;
+}
+
+div.my-social {
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+div.social {
+    display: grid;
+    grid-template-columns: 2fr 6fr 1fr;
+
+    margin-top: 0.75rem;
+    margin-bottom: 0.75rem;
+    padding: 0.5rem;
+
+    background: rgba(197, 197, 197, 0.09);
+    /* backdrop-filter: blur(4px); */
+}
+div.social:hover {
+    filter: brightness(1.5);
+    cursor: pointer;
+}
+
+div.social img {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+
+    color: #ABABAB;
+    font-weight: 300;
+    font-size: 0.75rem;
+}
+
+div.social span {
+    color: #ABABAB;
+    font-weight: 300;
+    font-size: 0.75rem;
+}

@@ -1,0 +1,117 @@
+#overlay {
+    position:fixed;    
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+
+    width: 100vw;
+    height: 100vh;
+
+    background: rgba(37, 37, 37, 0.8);
+    backdrop-filter: blur(2px);
+}
+.not-view {
+    display: none;
+}
+.text-modal {
+    position:fixed;    
+    top: 50%;
+    transform: translateY(-50%);
+
+    width: 80vw;
+
+    max-width: 500px;
+    max-height: 405px;
+    border-radius: 63px;
+
+    background-color: #E1E1E6;
+    border: 0.5rem solid #383838;
+    
+    overflow-x: hidden;
+    overflow-y: overlay;
+
+    z-index: 100;
+}
+
+
+.text-modal::-webkit-scrollbar {
+    display: block;
+    width: 5px;
+}
+.text-modal::-webkit-scrollbar-track {
+    background: transparent;
+}  
+.text-modal::-webkit-scrollbar-thumb {
+    border-radius: 10rem;
+    background: rgba(90, 90, 90);
+    border-right: none;
+    border-left: none;
+}
+.text-modal::-webkit-scrollbar-track-piece:end {
+    background: transparent;
+    margin-bottom: 3rem; 
+}
+.text-modal::-webkit-scrollbar-track-piece:start {
+    background: transparent;
+    margin-top: 3rem; 
+}
+
+.header-workspace {
+    width: 705px;
+    height: 45px;border: none;
+    background-color: #626262;    
+}
+
+div.write-workspace p:nth-child(1) {
+    text-align: center;
+    position: absolute;
+    width: 100%;
+    font-weight: 500;
+    font-size: 1.10rem;
+    line-break: auto;
+    word-wrap: break-word;
+    padding-left: 0.5rem;
+    line-height: 1.25rem;
+    z-index: 10;
+}
+div.write-workspace p:nth-child(2) {
+    text-align: left;
+    position: absolute;
+    width: 100%;
+    line-break: auto;
+    word-wrap: break-word;
+    white-space: pre-line;
+    padding-left: 0.5rem;
+    line-height: 1.25rem;
+    z-index: 10;
+}
+.colored-line:nth-child(odd) {
+    position: relative;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    width: 700px;
+    height: 1.20rem;
+
+    background-color: #C6C6D0;
+}
+
+.colored-line:nth-child(even) {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    width: 700px;
+    height: 1.30rem;
+
+    background-color: #E1E1E6;
+}
+
+.header-workspace {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 2rem;
+}
+
+.header-workspace .circles:hover{
+    cursor: pointer;
+}
